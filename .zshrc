@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # SSH Agent
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-SSH_ENV=$HOME/.ssh/environment
+#SSH_ENV=$HOME/.ssh/environment
 
 # start the ssh-agent
 function start_agent {
@@ -103,14 +103,14 @@ function start_agent {
     /usr/bin/ssh-add
 }
    
-if [ -f "${SSH_ENV}" ]; then
-     . "${SSH_ENV}" > /dev/null
-     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
+#if [ -f "${SSH_ENV}" ]; then
+#     . "${SSH_ENV}" > /dev/null
+#     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#        start_agent;
+#    }
+#else
+#    start_agent;
+#fi
 
 # aliases for native python venv
 function mkvenv {
