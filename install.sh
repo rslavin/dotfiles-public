@@ -29,6 +29,10 @@ if [[ $* != *-z* ]]; then
         curl https://raw.githubusercontent.com/rslavin/af-magic-dynamic/master/af-magic-dynamic.zsh-theme \
         -o .oh-my-zsh/custom/themes/af-magic-dynamic.zsh-theme || echo "ERROR: Failed to install af-magic-dynamic theme" >&2
 	    rm .shell.pre-oh-my-zsh > /dev/null 2>&1
+
+        # remove newly-installed zshrc since it will be copied from $dotdir 
+        rm "$HOME/.zshrc"
+	    ln -s "$dotdir/.oh-my-zsh" "$HOME/.oh-my-zsh"
     fi
 fi
 
@@ -39,7 +43,7 @@ for file in .*; do
         continue
     fi
 
-    # remove links if they exist (from previous implementation)
+    # remove links if they exist (from implementation)
     if [[ ! -d "$HOME/$file" && -L "$HOME/$file" ]]; then
         rm "$HOME/$file" && echo "Removed '$HOME/$file' symlink"
     fi
