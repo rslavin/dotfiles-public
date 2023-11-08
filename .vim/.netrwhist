@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/Rocky/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_2='/home/Rocky/.vim/bundle/Vundle.vim/test'
+let g:netrw_dirhist_3='/cygdrive/c/Users/Rocky/Dropbox/Research/ASE2015/paper'
